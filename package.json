@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/KenG98/whenisthebus/issues"
   },
-  "homepage": "https://github.com/KenG98/whenisthebus#readme"
+  "homepage": "https://github.com/KenG98/whenisthebus#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.3"
+  },
+  "devDependencies": {
+    "https": "^1.0.0"
+  }
 }
