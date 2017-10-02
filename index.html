@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WhenIsTheBus.com</title>
+  </head>
+  <body>
+    <h1>WhenIsTheBus.com</h1>
+    <div id="app">
+      <ul>
+        <li v-for="station in stations">
+          {{ station.name }}
+          <ul>
+            <li v-for="arrival in station.arrivals">
+              {{ arrival }} minutes
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

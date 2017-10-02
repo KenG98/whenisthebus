@@ -1,23 +1,49 @@
-var express = require('express');
-var app = express();
-app.set('view engine', 'pug')
-var server = require('http').createServer(app);
-var port = 8080;
-var buAdapter = new(require('/home/ubuntu/workspace/libs/bu_adapter.js'))();
+/** 
+ * The Vue app is what renders the web page
+ * with the given information.
+ */
 
-server.listen(port, function() {
-    console.log('Server listening at port ' + port);
-});
+var app = new Vue({
+  el: '#app',
+  data: {
+    // these are baloney values. just placeholders
+    stations: [{ 
+      name: "Student Village 2",
+      arrivals: [2, 10, 15]
+    },{
+      name: "Amory St.",
+      arrivals: [5, 13, 20]
+    },{
+      name: "St. Mary's St.",
+      arrivals: [10, 19]
+    }], 
+    others: ["Blandford St.", "Hotel Commonwealth", "Huntington Ave.", "710 Albany St."]
+  }
+})
 
-app.use(express.static(__dirname + '/public'));
+/**
+ * This function should fill in the above datastructure
+ * for the Vue app. Access variables with app.stations.whatever
+ */
 
-app.get('/', function(req, res) {
-    buAdapter.getBuses(function(resJson) {
-        // console.log(JSON.stringify(resJson, null, 1));
-        var busArr = resJson.ResultSet.Result;
-        // 	res.sendFile(__dirname + '/index.html');
-        res.render('index', { busses: busArr.map(x => JSON.stringify(x) ) })
-    });
+var getTimes = function() {
+  console.log("I don't do anything yet.")
+}
 
+/** 
+ * Finally, call the function to fill in the stations and times.
+ */
 
-});
+getTimes()
+
+/** 
+ * NOTES:
+ * 
+ * Replace development version of vue with production.
+ *
+ * Add google analytics javascript snippet.
+ *
+ * Add distinction between weekend and weekday schedules
+ *
+ */
+
