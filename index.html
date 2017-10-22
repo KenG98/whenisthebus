@@ -10,20 +10,24 @@
       gtag('js', new Date());
       gtag('config', 'UA-105760496-1');
     </script>
-
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="skeleton.css">
   </head>
+
   <body>
-    <h1>When Is The Bus . com</h1>
-    <div id="app">
-      <p> Service: {{ service }} </p>
-      <ul>
-        <li v-for="stop in Object.keys(stopTimes)">
-          {{ stationNames[stop] }} <!--{{ stop }}-->
-          <ul>
-            <li v-for="minute in stopTimes[stop]">{{ minute }} minutes </li>
-          </ul>
-        </li>
-      </ul>
+    <div class="container">
+      <h1>When Is The Bus . com</h1>
+      <div id="app">
+        <p> Service: {{ service }} </p>
+        <ul>
+          <li v-for="stop in Object.keys(stopTimes)">
+            {{ stationNames[stop] }} <!--{{ stop }}-->
+            <ul>
+              <li v-for="minute in stopTimes[stop]">{{ minute }} minutes </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
     <script src="vue.js"></script>
     <script src="index.js"></script>
