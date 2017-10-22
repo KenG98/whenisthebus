@@ -35,10 +35,18 @@
           <div><i>The Boston University Shuttle, timed by BU, conveniently displayed for your viewing pleasure on whenisthebus.com</i></div>
           <img src="rhett.gif" class="img-responsive center-block" alt="Rhett">
           <div> Today's bus service: {{ service }} </div>
+          <small><div> (For a map and live view, visit <br /><a href="https://www.bu.edu/thebus/live-view/">https://www.bu.edu/thebus/live-view/</a>)</div></small>
         </li>
         <li class="list-group-item" v-for="stop in Object.keys(stopNames)">
-          <big style="color:#3B5998;"><big><u>{{ stopNames[stop] }} </u></big></big>
-          <div v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
+          <big style="color:#3B5998;"><big>{{ stopNames[stop] }} </big></big> 
+          <br />
+          <span v-if="stopTimes[stop]">Arriving in...</span>
+          <span v-else>No busses soon.</span>
+          <div v-for="minute in stopTimes[stop]">
+            <span v-if="minute <= 5" style="color:green;"> {{ minute }} minutes </span>
+            <span v-else-if="minute <= 15" style="color:#EE7600;"> {{ minute }} minutes </span>
+            <span v-else style="color:red;"> {{ minute }} minutes </span>
+          </div>
         </li>
         <li class="list-group-item">
           <a class="btn btn-primary" href="about.html" role="button">About / Contact</a>
