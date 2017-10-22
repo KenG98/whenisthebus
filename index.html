@@ -2,17 +2,25 @@
 <html>
   <head>
     <title>WhenIsTheBus.com</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105760496-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-105760496-1');
+    </script>
+
   </head>
   <body>
-    <h1>WhenIsTheBus.com</h1>
+    <h1>When Is The Bus . com</h1>
     <div id="app">
+      <p> Service: {{ service }} </p>
       <ul>
-        <li v-for="station in stations">
-          {{ station.name }}
+        <li v-for="stop in Object.keys(stopTimes)">
+          {{ stationNames[stop] }} <!--{{ stop }}-->
           <ul>
-            <li v-for="arrival in station.arrivals">
-              {{ arrival }} minutes
-            </li>
+            <li v-for="minute in stopTimes[stop]">{{ minute }} minutes </li>
           </ul>
         </li>
       </ul>
