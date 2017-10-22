@@ -24,10 +24,11 @@
     <div id="app" class="container">
       <h1>When Is The Bus .com</h1>
       <p> Service: {{ service }} </p>
-      <div v-for="stop in Object.keys(stopTimes)"> 
-        <b><u>{{ stationNames[stop] }} <!--{{ stop }}--></u></b>
-        <div v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
+      <div v-for="stop in Object.keys(stopNames)"> 
+        <b><u>{{ stopNames[stop] }} <!--{{ stop }}--></u></b>
+        <ul><li v-for="minute in stopTimes[stop]">{{ minute }} minutes </li></ul>
       </div>
+      <br/>
       <p><a href="about.html">About</a></p>
     </div>
     <script src="vue.js"></script>
