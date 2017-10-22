@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>WhenIsTheBus.com</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -10,32 +10,23 @@
       gtag('js', new Date());
       gtag('config', 'UA-105760496-1');
     </script>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="skeleton.css">
-    <style>
-      /* Mobile first queries */
-      .textual {
-          font-size: 50px;
-        }
-      /* Larger than mobile */
-      @media screen and (min-width: 700px) {
-        .textual {
-          font-size: 20px;
-        }
-      }
-    </style>
+    <!-- BOOTSTRAP + styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Latest compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <div class="container">
+    <div id="app" class="container">
       <h1>When Is The Bus .com</h1>
-      <div id="app">
-        <p class="textual"> Service: {{ service }} </p>
-        <div v-for="stop in Object.keys(stopTimes)"> 
-          <b class="textual"><u>{{ stationNames[stop] }} <!--{{ stop }}--></u></b>
-          <div class="textual" v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
-          <!-- <hr/> -->
-        </div>
+      <p> Service: {{ service }} </p>
+      <div v-for="stop in Object.keys(stopTimes)"> 
+        <b><u>{{ stationNames[stop] }} <!--{{ stop }}--></u></b>
+        <div v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
       </div>
       <p><a href="about.html">About</a></p>
     </div>
