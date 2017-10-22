@@ -18,18 +18,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Latest compiled and minified Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <style>
+      .centered {
+        text-align: center;
+      }
+      /* The blue we use: #3B5998 */
+    </style>
   </head>
 
   <body>
     <div id="app" class="container">
-      <h1>When Is The Bus .com</h1>
-      <p> Service: {{ service }} </p>
-      <div v-for="stop in Object.keys(stopNames)"> 
-        <b><u>{{ stopNames[stop] }} <!--{{ stop }}--></u></b>
-        <ul><li v-for="minute in stopTimes[stop]">{{ minute }} minutes </li></ul>
-      </div>
-      <br/>
-      <p><a href="about.html">About</a></p>
+      <ul class="list-group col-sm-12 col-md-6 col-md-offset-3 centered">
+        <li class="list-group-item" > 
+          <h1 style="color:#3B5998;">When is the Bus?</h1>
+          <div><i>The Boston University Shuttle, timed by BU, conveniently displayed for your viewing pleasure on whenisthebus.com</i></div>
+          <img src="rhett.gif" class="img-responsive center-block" alt="Rhett">
+          <div> Today's bus service: {{ service }} </div>
+        </li>
+        <li class="list-group-item" v-for="stop in Object.keys(stopNames)">
+          <big style="color:#3B5998;"><big><u>{{ stopNames[stop] }} </u></big></big>
+          <div v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
+        </li>
+        <li class="list-group-item">
+          <a class="btn btn-primary" href="about.html" role="button">About / Contact</a>
+        </li>
+      </ul>
     </div>
     <script src="vue.js"></script>
     <script src="index.js"></script>
