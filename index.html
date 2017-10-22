@@ -15,10 +15,10 @@
     <style>
       /* Mobile first queries */
       .textual {
-          font-size: 40px;
+          font-size: 50px;
         }
       /* Larger than mobile */
-      @media (min-width: 700px) {
+      @media screen and (min-width: 700px) {
         .textual {
           font-size: 20px;
         }
@@ -34,7 +34,7 @@
         <div v-for="stop in Object.keys(stopTimes)"> 
           <b class="textual"><u>{{ stationNames[stop] }} <!--{{ stop }}--></u></b>
           <div class="textual" v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
-          <hr/>
+          <!-- <hr/> -->
         </div>
       </div>
       <p><a href="about.html">About</a></p>
