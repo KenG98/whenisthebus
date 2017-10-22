@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WhenIsTheBus.com</title>
+    <title>WhenIsTheBus.com - About</title>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-105760496-1"></script>
     <script>
@@ -16,18 +16,10 @@
 
   <body>
     <div class="container">
-      <h1>When Is The Bus .com</h1>
-      <div id="app">
-        <p> Service: {{ service }} </p>
-          <div v-for="stop in Object.keys(stopTimes)"> 
-            <b><u>{{ stationNames[stop] }} <!--{{ stop }}--></u></b>
-            <div v-for="minute in stopTimes[stop]">{{ minute }} minutes </div>
-            <hr/>
-          </div>
-      </div>
-      <p><a href="about.html">About</a></p>
+      <h1>About WhenIsTheBus.com</h1>
+      <p>We made WhenIsTheBus.com because we love Boston University's shuttle busses, but couldn't find an an easy way to get bus times. Android users don't have an app, and the website for the shuttle is a little clunky. Thus, we made this simple website. </p>
+      <p>To contact the admins, email kgarber [at] bu [dot] edu</p>
+      <p><a href="index.html">Home</a></p>
     </div>
-    <script src="vue.js"></script>
-    <script src="index.js"></script>
   </body>
 </html>
