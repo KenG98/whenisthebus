@@ -53,7 +53,7 @@ function getTimes() {
     app.stopTimes = stopTimes
   }
   // make and send a request
-  var testing = true
+  var testing = false
   if (testing) {
     // gotData(testResponse)
     app.stopTimes = {
@@ -75,7 +75,8 @@ function getTimes() {
 
 function getStops() {
   // the URL to request
-  var requestStr = "https://www.bu.edu/bumobile/rpc/bus/stops.json.php?service_id=caloop&callback=jQuery112400993204061098556_1508688412845&_=1508688412846"
+  // var requestStr = "https://www.bu.edu/bumobile/rpc/bus/stops.json.php?service_id=caloop&callback=jQuery112400993204061098556_1508688412845&_=1508688412846"
+  var requestStr = "https://www.bu.edu/bumobile/rpc/bus/stops.json.php?service_id=fall&callback=jQuery1124010487279827426832_1508775399203&_=1508775399204"
   // the callback which is called when the above URL returns something
   var gotData = function(d) {
     // console.log(d)
