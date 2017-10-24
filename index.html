@@ -41,7 +41,7 @@
           <big style="color:#3B5998;"><big>{{ stopNames[stop] }} </big></big> 
           <br />
           <span v-if="stopTimes[stop]">Arriving in...</span>
-          <span v-else>No busses soon.</span>
+          <span v-else>No buses soon.</span>
           <div v-for="minute in stopTimes[stop]">
             <span v-if="minute <= 5" style="color:green;"> {{ minute }} minutes </span>
             <span v-else-if="minute <= 15" style="color:#EE7600;"> {{ minute }} minutes </span>
