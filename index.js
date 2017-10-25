@@ -48,7 +48,7 @@ function getTimes() {
     })
     Object.keys(stopTimes).forEach((k) => {
       stopTimes[k].sort((a,b) => a-b)
-      stopTimes[k] = stopTimes[k].filter(a => (a < 35))
+      stopTimes[k] = stopTimes[k].filter(a => (a < 35 && a >= 0))
       if (stopTimes[k].length < 1) {
         delete stopTimes[k]
       }
