@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WhenIsTheBus.com</title>
+    <title>WhenIsTheBus</title>
     <!-- BOOTSTRAP + styles -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- jquery -->
@@ -32,10 +32,10 @@
       <ul class="list-group col-sm-12 col-md-6 col-md-offset-3 centered">
         <li class="list-group-item" > 
           <h1 style="color:#3B5998;">When is the Bus?</h1>
-          <div><i>The Boston University Shuttle, timed by BU, conveniently displayed for your viewing pleasure on whenisthebus.com</i></div>
+          <div><i>The BU Shuttle schedule conveniently displayed for your viewing pleasure</i></div>
           <img src="rhett.gif" class="img-responsive center-block" alt="Rhett">
           <div> Today's bus service: {{ service }} </div>
-          <small><div> (For a map and live view, visit <br /><a href="https://www.bu.edu/thebus/live-view/">https://www.bu.edu/thebus/live-view/</a>)</div></small>
+          <small><div><a href="https://www.bu.edu/thebus/live-view/">Map and Live View</a></div></small>
         </li>
         <li class="list-group-item" v-for="stop in Object.keys(stopNames)">
           <big style="color:#3B5998;"><big>{{ stopNames[stop] }} </big></big> 
