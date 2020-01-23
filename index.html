@@ -1,7 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>WhenIsTheBus.com</title>
+    <title>WhenIsTheBus</title>
+
+    <meta name="theme-color" content="#cc0000">
+
+    <link rel="shortcut icon" href="fav/favicon.ico">
+    <link rel="icon" sizes="16x16 32x32 64x64" href="fav/favicon.ico">
+    <link rel="icon" type="image/png" sizes="196x196" href="fav/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="160x160" href="fav/favicon-160.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="fav/favicon-96.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="fav/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16.png">
+    <link rel="apple-touch-icon" href="fav/favicon-57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="fav/favicon-114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="fav/favicon-72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="fav/favicon-144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="fav/favicon-60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="fav/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="fav/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="fav/favicon-152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="fav/favicon-180.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="fav/favicon-144.png">
+    <meta name="msapplication-config" content="fav/browserconfig.xml">
+
     <!-- BOOTSTRAP + styles -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- jquery -->
@@ -32,10 +56,10 @@
       <ul class="list-group col-sm-12 col-md-6 col-md-offset-3 centered">
         <li class="list-group-item" > 
           <h1 style="color:#3B5998;">When is the Bus?</h1>
-          <div><i>The Boston University Shuttle, timed by BU, conveniently displayed for your viewing pleasure on whenisthebus.com</i></div>
+          <div><i>The BU Shuttle schedule conveniently displayed for your viewing pleasure</i></div>
           <img src="rhett.gif" class="img-responsive center-block" alt="Rhett">
           <div> Today's bus service: {{ service }} </div>
-          <small><div> (For a map and live view, visit <br /><a href="https://www.bu.edu/thebus/live-view/">https://www.bu.edu/thebus/live-view/</a>)</div></small>
+          <small><div><a href="https://www.bu.edu/thebus/live-view/">Map and Live View</a></div></small>
         </li>
         <li class="list-group-item" v-for="stop in Object.keys(stopNames)">
           <big style="color:#3B5998;"><big>{{ stopNames[stop] }} </big></big> 

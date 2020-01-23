@@ -84,7 +84,7 @@ function getStops() {
   var gotData = function(d) {
     // console.log(d)
     var firstParen = d.indexOf('(')
-    var lastParen = d.indexOf(')')
+    var lastParen = d.lastIndexOf(')')
     var realData = d.slice(firstParen + 1, lastParen)
     realData = JSON.parse(realData)
     var newStopNames = {}
